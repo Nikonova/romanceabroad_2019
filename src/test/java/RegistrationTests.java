@@ -1,4 +1,5 @@
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 
 public class RegistrationTests extends BaseUI {
@@ -12,6 +13,10 @@ public class RegistrationTests extends BaseUI {
         driver.findElement(Locators.BUTTON_NEXT).click();
         driver.findElement(Locators.TEXT_FIELD_NICKNAME).sendKeys(Data.nickname);
         driver.findElement(Locators.TEXT_FIELD_PHONE).sendKeys(Data.phone);
+        WebElement checkboxConfirmation = driver.findElement(By.cssSelector("input#confirmation"));
+        boolean selectedCheckbox = checkboxConfirmation.isSelected();
+        System.out.println(selectedCheckbox + "!!!!!!!!!");
+        checkboxConfirmation.click();
 
     }
 }
