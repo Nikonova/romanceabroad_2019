@@ -1,13 +1,16 @@
-import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class TourTests extends BaseUI {
 
-    By LINK_TOUR = By.xpath("//a[text()='TOUR TO UKRAINE']");
+    String currentTitle;
 
     @Test
     public void testTour() {
 
-        driver.findElement(LINK_TOUR).click();
+        driver.findElement(Locators.LINK_TOUR).click();
+        currentTitle = driver.getTitle();
+        System.out.println(currentTitle);
+        Assert.assertEquals(currentTitle, Data.verifyTitle);
     }
 }

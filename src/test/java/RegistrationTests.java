@@ -13,10 +13,15 @@ public class RegistrationTests extends BaseUI {
         driver.findElement(Locators.BUTTON_NEXT).click();
         driver.findElement(Locators.TEXT_FIELD_NICKNAME).sendKeys(Data.nickname);
         driver.findElement(Locators.TEXT_FIELD_PHONE).sendKeys(Data.phone);
+
         WebElement checkboxConfirmation = driver.findElement(By.cssSelector("input#confirmation"));
         boolean selectedCheckbox = checkboxConfirmation.isSelected();
         System.out.println(selectedCheckbox + "!!!!!!!!!");
         checkboxConfirmation.click();
+
+
+
+
 
     }
 }

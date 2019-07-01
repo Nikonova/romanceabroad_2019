@@ -11,4 +11,9 @@ public class Data {
 
     //Search page
     public static final String expectedUrlSearch = "https://romanceabroad.com/users/search";
+
+    //Tour
+    public static final String verifyTitle = "Pilot Group: Gift store - Item";
+
+
 }
