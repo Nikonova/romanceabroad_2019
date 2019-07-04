@@ -4,6 +4,7 @@ import org.testng.annotations.Test;
 
 public class MainPageTests extends BaseUI {
 
+
     String currentUrlMainPage;
 
     @Test

@@ -9,9 +9,9 @@ public class SearchTests extends BaseUI {
     public void testSearchPage() {
         driver.findElement(Locators.LINK_SEARCH).click();
 
-        getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY, 3);
-        getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY_MIN, 0);
-        getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY_MAX, 20);
+        searchPage.getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY, 3);
+        searchPage.getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY_MIN, 0);
+        searchPage.getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY_MAX, 20);
 
         driver.findElement(Locators.BUTTON_SEARCH).click();
         driver.findElement(Locators.LINK_LIST_VIEW).click();
