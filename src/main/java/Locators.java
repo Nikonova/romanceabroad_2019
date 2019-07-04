@@ -3,6 +3,10 @@ import org.openqa.selenium.By;
 public class Locators {
 
     //Main page
+    public static final By LINK_VIDEO_YOUTUBE = By.xpath("//iframe[@src='https://www.youtube.com/embed/RRECuJzm3IY?start=85']");
+    public static final By BUTTON_PLAY = By.cssSelector("button.ytp-large-play-button.ytp-button");
+
+    //BookNow
     public static final By LINK_BOOKNOW = By.xpath("//a[text()='BOOK NOW ']");
 
     //Content page (How We Work)
@@ -11,6 +15,8 @@ public class Locators {
 
     //Blog page
     public static final By LINK_BLOG = By.cssSelector("a[href='https://romanceabroad.com/content/view/blog']");
+    public static final By LINK_KRAKOV = By.xpath("//a[@href='https://romanceabroad.com/content/view/kharkov-dating-agency']");
+    public static final By LINK_BACK = By.xpath("//div[@class='info-menu-inner']//a[@href='https://romanceabroad.com/content/view/blog']");
 
     //Search page (Pretty Women)
     public static final By LINK_SEARCH = By.xpath("//a[@href='https://romanceabroad.com/users/search']");
@@ -31,6 +37,8 @@ public class Locators {
 
     //Store page (Gift)
     public static final By LINK_STORE = By.cssSelector("a[href='https://romanceabroad.com/store/category-sweets']");
+    public static final By LINK_SEARCH_PRODUCT = By.cssSelector("input[id='search_product']");
+    public static final By BUTTON_SEARCH_PRODUCT = By.cssSelector("button#search_friend");
 
     //Registration page (JOIN FOR FREE NOW)
     public static final By BUTTON_REGISTRATION = By.cssSelector("a[data-action='show-registration-block']");
@@ -39,14 +47,15 @@ public class Locators {
     public static final By TEXT_FIELD_PASSWORD = By.cssSelector("input[id='password']");
     public static final By TEXT_FIELD_NICKNAME = By.cssSelector("#nickname");
     public static final By TEXT_FIELD_PHONE = By.cssSelector("input[name='data[phone]']");
+    public static final By CHECKBOX = By.cssSelector("input#confirmation");
 
     //Tour
     public static final By LINK_TOUR = By.xpath("//a[text()='TOUR TO UKRAINE']");
-
-
-
-
-
+    public static final By LINK_MINI_LOGO = By.xpath("//img[@src='/application/views/flatty/logo/mini_logo.png']");
+    public static final By LINK_SEARCH_TOUR = By.xpath("//input[@id='search_product']");
+    public static final By BUTTON_SEARCH_TOUR = By.cssSelector("button[id='search_friend']");
+    public static final By BUTTON_PAYPAL = By.cssSelector("a[href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CNUP836ZN9G36']");
+    public static final By CLICK_ITEM = By.xpath("//div[@class='col-xs-6 col-sm-6 col-md-3 b-store-list__item']");
 
 
 }
