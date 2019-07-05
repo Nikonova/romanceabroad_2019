@@ -4,7 +4,6 @@ import org.testng.annotations.Test;
 
 public class MainPageTests extends BaseUI {
 
-
     String currentUrlMainPage;
 
     @Test
@@ -15,7 +14,7 @@ public class MainPageTests extends BaseUI {
 
         driver.findElement(Locators.BUTTON_PLAY).click();
 
-        currentUrlMainPage =driver.getCurrentUrl();
+        currentUrlMainPage = driver.getCurrentUrl();
         System.out.println(currentUrlMainPage);
         Assert.assertEquals(currentUrlMainPage, "https://romanceabroad.com/");
 

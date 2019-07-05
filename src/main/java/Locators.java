@@ -21,6 +21,7 @@ public class Locators {
     //Search page (Pretty Women)
     public static final By LINK_SEARCH = By.xpath("//a[@href='https://romanceabroad.com/users/search']");
     public static final By LINK_LIST_VIEW = By.cssSelector("a[title='List view']");
+    public static final By LINK_LIST_GALLERY = By.cssSelector("a[title='Gallery view']");
     public static final By DROP_DOWN_LIST_SORT_BY = By.xpath("//div[@class='form-inline']//select");
     public static final By DROP_DOWN_LIST_SORT_BY_MIN = By.xpath("//div[@class='col-xs-5 no-padding-left']//select");
     public static final By DROP_DOWN_LIST_SORT_BY_MAX = By.xpath("//div[@class='col-xs-5 no-padding-right']//select");
@@ -47,6 +48,13 @@ public class Locators {
     public static final By TEXT_FIELD_PASSWORD = By.cssSelector("input[id='password']");
     public static final By TEXT_FIELD_NICKNAME = By.cssSelector("#nickname");
     public static final By TEXT_FIELD_PHONE = By.cssSelector("input[name='data[phone]']");
+    public static final By SELECT_DAY = By.cssSelector("#daySelect");
+    public static final By SELECT_DAY_TEXT = By.xpath("//li[@data-handler='selectDay']//a[text()='2']");
+    public static final By SELECT_MONTH = By.cssSelector("#monthSelect");
+    public static final By SELECT_MONTH_TEXT = By.xpath("//li[@data-handler='selectMonth']//a[text()='Jun']");
+    public static final By SELECT_YEAR = By.cssSelector("#yearSelect");
+    public static final By SELECT_YEAR_TEXT = By.xpath("//li[@data-handler='selectYear']//a[text()='1986']");
+
     public static final By CHECKBOX = By.cssSelector("input#confirmation");
 
     //Tour

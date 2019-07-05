@@ -20,8 +20,8 @@ public class ExpectedData {
     public static final String expectedText = "TOURS TO UKRAINE";
 
     //Store page(gift)
-     public static final String expectedTextProduct = "Sushi sets";
+    public static final String expectedTextProduct = "Sushi sets";
 
-     //Content
-     public static final String expectedUrlContent = "https://romanceabroad.com/content/view/how-it-works";
+    //Content
+    public static final String expectedUrlContent = "https://romanceabroad.com/content/view/how-it-works";
 }

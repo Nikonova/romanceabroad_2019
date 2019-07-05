@@ -1,15 +1,15 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class MainPage extends BaseActions {
-    public MainPage (WebDriver driver, WebDriverWait wait) {
+    public MainPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }
 
     public void clickJoinButton() {
+
         driver.findElement(Locators.BUTTON_REGISTRATION).click();
     }
 
@@ -21,15 +21,16 @@ public class MainPage extends BaseActions {
 
         wait.until(ExpectedConditions.elementToBeClickable(Locators.BUTTON_NEXT));
         driver.findElement(Locators.BUTTON_NEXT).click();
-            }
+    }
+
     public void completeSecondPartOfRegistration() {
         driver.findElement(Locators.TEXT_FIELD_NICKNAME).sendKeys(generateNewNumber(Data.nickname, 4));
-        driver.findElement(By.cssSelector("#daySelect")).click();
-        driver.findElement(By.xpath("//li[@data-handler='selectDay']//a[text()='2']")).click();
-        driver.findElement(By.cssSelector("#monthSelect")).click();
-        driver.findElement(By.xpath("//li[@data-handler='selectMonth']//a[text()='Jun']")).click();
-        driver.findElement(By.cssSelector("#yearSelect")).click();
-        driver.findElement(By.xpath("//li[@data-handler='selectYear']//a[text()='1986']")).click();
+        driver.findElement(Locators.SELECT_DAY).click();
+        driver.findElement(Locators.SELECT_DAY_TEXT).click();
+        driver.findElement(Locators.SELECT_MONTH).click();
+        driver.findElement(Locators.SELECT_MONTH_TEXT).click();
+        driver.findElement(Locators.SELECT_YEAR).click();
+        driver.findElement(Locators.SELECT_YEAR_TEXT).click();
         driver.findElement(Locators.TEXT_FIELD_PHONE).sendKeys(Data.phone);
 
         WebElement checkboxConfirmation = driver.findElement(Locators.CHECKBOX);

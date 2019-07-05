@@ -2,7 +2,7 @@ import org.openqa.selenium.By;
 
 public class CurrentLocators {
 
-    //Store(gift
+    //Store
     public static final By currentTextProduct = By.xpath("//div[@class='title-block pt5']");
 
     //Tour
