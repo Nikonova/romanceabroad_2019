@@ -1,6 +1,7 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+
 public class ContentTests extends BaseUI {
 
     String currentUrl;
@@ -12,5 +13,7 @@ public class ContentTests extends BaseUI {
         currentUrl = driver.getCurrentUrl();
         System.out.println(currentUrl);
         Assert.assertEquals(currentUrl, ExpectedData.expectedUrlContent);
+
+
     }
 }

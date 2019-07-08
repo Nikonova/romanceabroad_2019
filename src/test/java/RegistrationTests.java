@@ -9,5 +9,7 @@ public class RegistrationTests extends BaseUI {
         mainPage.completeFirstPartOfRegistration();
         mainPage.completeSecondPartOfRegistration();
 
+
+
     }
 }
