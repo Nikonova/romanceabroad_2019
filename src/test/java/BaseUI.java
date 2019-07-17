@@ -11,6 +11,11 @@ public class BaseUI {
     WebDriverWait wait;
     MainPage mainPage;
     SearchPage searchPage;
+    TourPage tourPage;
+    BlogPage blogPage;
+    StorePage storePage;
+    MediaPage mediaPage;
+    ContentPage contentPage;
 
     @BeforeMethod
     public void setUp() {
@@ -20,6 +25,12 @@ public class BaseUI {
         wait = new WebDriverWait(driver, 20);
         mainPage = new MainPage(driver, wait);
         searchPage = new SearchPage(driver, wait);
+        tourPage = new TourPage(driver, wait);
+        blogPage = new BlogPage(driver, wait);
+        storePage = new StorePage(driver, wait);
+        mediaPage = new MediaPage(driver, wait);
+        contentPage = new ContentPage(driver, wait);
+
 
         driver.manage().window().maximize();
         driver.get(mainUrl);

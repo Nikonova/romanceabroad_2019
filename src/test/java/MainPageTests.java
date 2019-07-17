@@ -1,4 +1,3 @@
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -12,7 +11,7 @@ public class MainPageTests extends BaseUI {
     @Test
     public void testMainPage() {
 
-        List<WebElement> MainLinks = driver.findElements(By.xpath("//ul[@class='navbar-nav']//li"));
+        List<WebElement> MainLinks = driver.findElements(Locators.LINKS_FROM_NAVBAR);
         System.out.println(MainLinks.size());
 
         for (int i = 0; i < MainLinks.size(); i++) {
@@ -30,18 +29,18 @@ public class MainPageTests extends BaseUI {
 
             MainLinks.get(i).click();
             driver.get(mainUrl);
-            MainLinks = driver.findElements(By.xpath("//ul[@class='navbar-nav']//li"));
+            MainLinks = driver.findElements(Locators.LINKS_FROM_NAVBAR);
 
         }
 
-       /* WebElement ele = driver.findElement(Locators.LINK_VIDEO_YOUTUBE);
+        WebElement ele = driver.findElement(Locators.LINK_VIDEO_YOUTUBE);
         driver.switchTo().frame(ele);
 
         driver.findElement(Locators.BUTTON_PLAY).click();
 
         currentUrlMainPage = driver.getCurrentUrl();
         System.out.println(currentUrlMainPage);
-        Assert.assertEquals(currentUrlMainPage, "https://romanceabroad.com/"); */
+        Assert.assertEquals(currentUrlMainPage, Data.expectedMainUrl);
 
     }
 }

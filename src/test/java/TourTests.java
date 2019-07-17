@@ -3,55 +3,25 @@ import org.testng.annotations.Test;
 
 public class TourTests extends BaseUI {
 
-    String currentTitle;
-    String currentUrl;
-    String currentText;
-
     @Test
-    public void testTour() {
-
-        driver.findElement(Locators.LINK_TOUR).click();
-
-        currentTitle = driver.getTitle();
-        System.out.println(currentTitle);
-        Assert.assertEquals(currentTitle, ExpectedData.expectedTitle);
-
-        currentUrl = driver.getCurrentUrl();
-        System.out.println(currentUrl);
-        Assert.assertEquals(currentUrl, ExpectedData.expectedUrlTourToUkraine);
-
-        driver.findElement(Locators.LINK_MINI_LOGO).click();
-        currentUrl = driver.getCurrentUrl();
-        System.out.println(currentUrl);
-        Assert.assertEquals(currentUrl, ExpectedData.expectedMainUrl);
-
-        driver.findElement(Locators.LINK_BOOKNOW).click();
-        currentTitle = driver.getTitle();
-        System.out.println(currentTitle);
-        Assert.assertEquals(currentTitle, ExpectedData.expectedTitle);
-        currentUrl = driver.getCurrentUrl();
-        System.out.println(currentUrl);
-        Assert.assertEquals(currentUrl, ExpectedData.expectedUrlTourToUkraine);
-
-        driver.findElement(Locators.LINK_SEARCH_TOUR).sendKeys("personal");
-        driver.findElement(Locators.BUTTON_SEARCH_TOUR).click();
-        driver.findElement(Locators.CLICK_ITEM).click();
-
-        currentText = driver.findElement(CurrentLocators.currentTextTour).getText();
-        System.out.println(currentText);
-        Assert.assertEquals(currentText, ExpectedData.expectedText);
-
-        driver.findElement(Locators.BUTTON_PAYPAL).click();
-
-        currentUrl = driver.getCurrentUrl();
-        System.out.println(currentUrl);
-        Assert.assertEquals(currentUrl, ExpectedData.expectedUrlTourToUkraine);
-
-
-
-
+    public void testTourPage() {
+        tourPage.clickTour();
+        tourPage.clickLogoHeart();
+        String mainUrl = tourPage.verifyMainUrl();
+        Assert.assertEquals(mainUrl, Data.expectedMainUrl);
+        tourPage.clickBookNow();
+        String tourTitle = tourPage.verifyTitle();
+        System.out.println(tourTitle);
+        Assert.assertEquals(tourTitle, Data.expectedTitleTourPage);
+        tourPage.enterKeysToSearch();
+        tourPage.clickSearchButton();
+        tourPage.clickFirstItem();
+        String tourText = tourPage.verifyText();
+        System.out.println(tourText);
+        Assert.assertEquals(tourText, Data.expectedText);
+        tourPage.clickPayPal();
+        String tourUrl = tourPage.verifyUrlTourToUkraine();
+        Assert.assertEquals(tourUrl, Data.expectedUrlTourToUkraine);
 
     }
-
-
 }

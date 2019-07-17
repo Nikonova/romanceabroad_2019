@@ -5,17 +5,19 @@ public class Locators {
     //Main page
     public static final By LINK_VIDEO_YOUTUBE = By.xpath("//iframe[@src='https://www.youtube.com/embed/RRECuJzm3IY?start=85']");
     public static final By BUTTON_PLAY = By.cssSelector("button.ytp-large-play-button.ytp-button");
+    public static final By LINKS_FROM_NAVBAR = By.xpath("//ul[@class='navbar-nav']//li");
 
     //BookNow
     public static final By LINK_BOOKNOW = By.xpath("//a[text()='BOOK NOW ']");
 
     //Content page (How We Work)
     public static final By LINK_CONTENT = By.cssSelector("a[href='https://romanceabroad.com/content/view/how-it-works']");
+    public static final By LINKS_ON_CONTENT = By.xpath("//ul[@class='nav nav-pills nav-stacked content-pages-tree']//li");
 
 
     //Blog page
     public static final By LINK_BLOG = By.cssSelector("a[href='https://romanceabroad.com/content/view/blog']");
-    public static final By LINK_KRAKOV = By.xpath("//a[@href='https://romanceabroad.com/content/view/kharkov-dating-agency']");
+    public static final By LINK_KHARKOV = By.xpath("//a[@href='https://romanceabroad.com/content/view/kharkov-dating-agency']");
     public static final By LINK_BACK = By.xpath("//div[@class='info-menu-inner']//a[@href='https://romanceabroad.com/content/view/blog']");
 
     //Search page (Pretty Women)
@@ -31,15 +33,17 @@ public class Locators {
 
     //Media page (Photos)
     public static final By LINK_MEDIA = By.cssSelector("a[href='https://romanceabroad.com/media/index']");
-    public static final By LINK_PHOTO = By.cssSelector("a[href='https://romanceabroad.com/media/photo']");
+    /*public static final By LINK_PHOTO = By.cssSelector("a[href='https://romanceabroad.com/media/photo']");
     public static final By LINK_VIDEO = By.cssSelector("a[href='https://romanceabroad.com/media/video']");
     public static final By LINK_ALBUMS = By.cssSelector("a[href='https://romanceabroad.com/media/albums']");
-    public static final By LINK_ALL = By.cssSelector("a[href='https://romanceabroad.com/media/all']");
+    public static final By LINK_ALL = By.cssSelector("a[href='https://romanceabroad.com/media/all']");*/
+    public static final By LINK_LIST_ON_MEDIA_PAGE = By.xpath("//ul[@class='b-tabs']//li");
 
     //Store page (Gift)
     public static final By LINK_STORE = By.cssSelector("a[href='https://romanceabroad.com/store/category-sweets']");
     public static final By LINK_SEARCH_PRODUCT = By.cssSelector("input[id='search_product']");
     public static final By BUTTON_SEARCH_PRODUCT = By.cssSelector("button#search_friend");
+    public static final By currentTextProduct = By.xpath("//div[@class='title-block pt5']");
 
     //Registration page (JOIN FOR FREE NOW)
     public static final By BUTTON_REGISTRATION = By.cssSelector("a[data-action='show-registration-block']");
@@ -64,6 +68,7 @@ public class Locators {
     public static final By BUTTON_SEARCH_TOUR = By.cssSelector("button[id='search_friend']");
     public static final By BUTTON_PAYPAL = By.cssSelector("a[href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CNUP836ZN9G36']");
     public static final By CLICK_ITEM = By.xpath("//div[@class='col-xs-6 col-sm-6 col-md-3 b-store-list__item']");
+    public static final By currentTextTour = By.xpath("//h1[@class='title']");
 
 
 }

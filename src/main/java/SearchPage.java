@@ -1,6 +1,5 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Assert;
 
 public class SearchPage extends BaseActions {
     public SearchPage(WebDriver driver, WebDriverWait wait) {
@@ -14,9 +13,9 @@ public class SearchPage extends BaseActions {
     }
 
     public void searchByDropDownLists() {
-        getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY, 3);
-        getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY_MIN, 0);
-        getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY_MAX, 20);
+        getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY, Data.sortByNameViewsOrRegistration);
+        getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY_MIN, Data.sortByAgeMin);
+        getDropDownListByIndex(Locators.DROP_DOWN_LIST_SORT_BY_MAX, Data.sortByAgeMax);
         driver.findElement(Locators.BUTTON_SEARCH).click();
     }
 
@@ -28,8 +27,11 @@ public class SearchPage extends BaseActions {
     public void selectRightAndLeftClick() {
         driver.findElement(Locators.RIGHT_CLICK).click();
         driver.findElement(Locators.LEFT_CLICK).click();
-        currentUrlSearch = driver.getCurrentUrl();
-        System.out.println(currentUrlSearch);
-        Assert.assertEquals(currentUrlSearch, ExpectedData.expectedUrlSearch);
     }
+
+    public String verifySearchUrl() {
+        currentUrlSearch = driver.getCurrentUrl();
+        return currentUrlSearch;
+    }
+
 }
