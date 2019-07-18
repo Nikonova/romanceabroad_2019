@@ -13,8 +13,7 @@ public class TourTests extends BaseUI {
         String tourTitle = tourPage.verifyTitle();
         System.out.println(tourTitle);
         Assert.assertEquals(tourTitle, Data.expectedTitleTourPage);
-        tourPage.enterKeysToSearch();
-        tourPage.clickSearchButton();
+        tourPage.implementSearchByTour();
         tourPage.clickFirstItem();
         String tourText = tourPage.verifyText();
         System.out.println(tourText);
@@ -22,6 +21,7 @@ public class TourTests extends BaseUI {
         tourPage.clickPayPal();
         String tourUrl = tourPage.verifyUrlTourToUkraine();
         Assert.assertEquals(tourUrl, Data.expectedUrlTourToUkraine);
+        Assert.assertTrue(driver.findElement(Locators.CURRENT_TEXT_ON_LOGIN_BUTTON).isDisplayed());
 
     }
 }

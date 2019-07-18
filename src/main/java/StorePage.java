@@ -13,16 +13,13 @@ public class StorePage extends BaseActions {
         driver.findElement(Locators.LINK_STORE).click();
     }
 
-    public void enterKeysToSearch() {
+    public void implementSearchByProduct() {
         driver.findElement(Locators.LINK_SEARCH_PRODUCT).sendKeys(Data.searchProduct);
-    }
-
-    public void clickSearchButton() {
         driver.findElement(Locators.BUTTON_SEARCH_PRODUCT).click();
     }
 
     public String verifyNameOfProduct() {
-        currentText = driver.findElement(Locators.currentTextProduct).getText();
+        currentText = driver.findElement(Locators.CURRENT_TEXT_PRODUCT).getText();
         return currentText;
     }
 

@@ -43,7 +43,11 @@ public class Locators {
     public static final By LINK_STORE = By.cssSelector("a[href='https://romanceabroad.com/store/category-sweets']");
     public static final By LINK_SEARCH_PRODUCT = By.cssSelector("input[id='search_product']");
     public static final By BUTTON_SEARCH_PRODUCT = By.cssSelector("button#search_friend");
-    public static final By currentTextProduct = By.xpath("//div[@class='title-block pt5']");
+    public static final By CURRENT_TEXT_PRODUCT = By.xpath("//div[@class='title-block pt5']");
+    public static final By IMG_FLOWER_BASKET = By.xpath("//img[@src='https://romanceabroad.com/uploads/store/0/0/0/12/big-8837694dae.jpg']");
+    public static final By IMG_SPA = By.xpath("//img[@src='https://romanceabroad.com/uploads/store/0/0/0/2/big-c907aa3b7e.jpg']");
+    public static final By IMG_TEDDY_BEAR = By.xpath("//img[@src='https://romanceabroad.com/uploads/store/0/0/0/11/big-ffd05e6dee.jpg']");
+    public static final By IMG_TOURS_TO_UKRAINE = By.xpath("//img[@src='https://romanceabroad.com/uploads/store/0/0/0/20/big-c26f195dec.jpg']");
 
     //Registration page (JOIN FOR FREE NOW)
     public static final By BUTTON_REGISTRATION = By.cssSelector("a[data-action='show-registration-block']");
@@ -60,6 +64,7 @@ public class Locators {
     public static final By SELECT_YEAR_TEXT = By.xpath("//li[@data-handler='selectYear']//a[text()='1986']");
 
     public static final By CHECKBOX = By.cssSelector("input#confirmation");
+    public static final By BUTTON_NEXT_ON_GET_STARTED = By.xpath("//button[@data-action='update-profile']");
 
     //Tour
     public static final By LINK_TOUR = By.xpath("//a[text()='TOUR TO UKRAINE']");
@@ -68,7 +73,8 @@ public class Locators {
     public static final By BUTTON_SEARCH_TOUR = By.cssSelector("button[id='search_friend']");
     public static final By BUTTON_PAYPAL = By.cssSelector("a[href='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CNUP836ZN9G36']");
     public static final By CLICK_ITEM = By.xpath("//div[@class='col-xs-6 col-sm-6 col-md-3 b-store-list__item']");
-    public static final By currentTextTour = By.xpath("//h1[@class='title']");
+    public static final By CURRENT_TEXT_TOUR = By.xpath("//h1[@class='title']");
+    public static final By CURRENT_TEXT_ON_LOGIN_BUTTON = By.xpath("//a[@id='ajax_login_link']");
 
 
 }

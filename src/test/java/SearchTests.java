@@ -12,6 +12,10 @@ public class SearchTests extends BaseUI {
         String searchUrl = searchPage.verifySearchUrl();
         System.out.println(searchUrl);
         Assert.assertEquals(searchUrl, Data.expectedUrlSearch);
+
+
+
+
     }
 
 }

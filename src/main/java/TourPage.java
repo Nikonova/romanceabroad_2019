@@ -1,5 +1,6 @@
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 public class TourPage extends BaseActions {
 
@@ -33,11 +34,8 @@ public class TourPage extends BaseActions {
         return currentTitle;
     }
 
-    public void enterKeysToSearch() {
+    public void implementSearchByTour() {
         driver.findElement(Locators.LINK_SEARCH_TOUR).sendKeys(Data.enterKeysToSearch);
-    }
-
-    public void clickSearchButton() {
         driver.findElement(Locators.BUTTON_SEARCH_TOUR).click();
     }
 
@@ -46,12 +44,13 @@ public class TourPage extends BaseActions {
     }
 
     public String verifyText() {
-        currentText = driver.findElement(Locators.currentTextTour).getText();
+        currentText = driver.findElement(Locators.CURRENT_TEXT_TOUR).getText();
         return currentText;
     }
 
     public void clickPayPal() {
         driver.findElement(Locators.BUTTON_PAYPAL).click();
+        Assert.assertTrue(driver.findElement(Locators.BUTTON_PAYPAL).isDisplayed());
     }
 
     public String verifyUrlTourToUkraine() {
