@@ -11,25 +11,25 @@ public class MainPageTests extends BaseUI {
     @Test
     public void testMainPage() {
 
-        List<WebElement> MainLinks = driver.findElements(Locators.LINKS_FROM_NAVBAR);
-        System.out.println(MainLinks.size());
+        List<WebElement> mainLinks = driver.findElements(Locators.LINKS_FROM_NAVBAR);
+        System.out.println(mainLinks.size());
 
-        for (int i = 0; i < MainLinks.size(); i++) {
-            String info = MainLinks.get(i).getText();
+        for (int i = 0; i < mainLinks.size(); i++) {
+            String info = mainLinks.get(i).getText();
             System.out.println(info);
-            if (MainLinks.get(i).getText().contains("HOME")&& MainLinks.get(i).getText().contains("HOW WE WORK") && MainLinks.get(i).getText().contains("PHOTOS")&&MainLinks.get(i).getText().contains("GIFTS")&&MainLinks.get(i).getText().contains("TOUR TO UKRAINE")&&MainLinks.get(i).getText().contains("BLOG")&&MainLinks.get(i).getText().contains("SIGN IN")){
+            if (mainLinks.get(i).getText().contains("HOME")&& mainLinks.get(i).getText().contains("HOW WE WORK") && mainLinks.get(i).getText().contains("PHOTOS")&&mainLinks.get(i).getText().contains("GIFTS")&&mainLinks.get(i).getText().contains("TOUR TO UKRAINE")&&mainLinks.get(i).getText().contains("BLOG")&&mainLinks.get(i).getText().contains("SIGN IN")){
                 System.out.println("We can make test");
             }
 
             /* we can use this too
 
-            WebElement elementsOfList = MainLinks.get(i);
+            WebElement elementsOfList = mainLinks.get(i);
             String info = elementsOfList.getText();
             System.out.println(info);*/
 
-            MainLinks.get(i).click();
+            mainLinks.get(i).click();
             driver.get(mainUrl);
-            MainLinks = driver.findElements(Locators.LINKS_FROM_NAVBAR);
+            mainLinks = driver.findElements(Locators.LINKS_FROM_NAVBAR);
 
         }
 

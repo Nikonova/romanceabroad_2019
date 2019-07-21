@@ -13,6 +13,8 @@ public class Locators {
     //Content page (How We Work)
     public static final By LINK_CONTENT = By.cssSelector("a[href='https://romanceabroad.com/content/view/how-it-works']");
     public static final By LINKS_ON_CONTENT = By.xpath("//ul[@class='nav nav-pills nav-stacked content-pages-tree']//li");
+    public static final By LINKS_ON_BLOG = By.xpath("//div[@class='info-content-block wysiwyg']//ul//li");
+
 
 
     //Blog page

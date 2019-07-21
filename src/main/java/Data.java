@@ -29,6 +29,7 @@ public class Data {
 
     //Content
     public static final String expectedUrlContent = "https://romanceabroad.com/content/view/how-it-works";
+    public static final String expectedTitleBlog = "Blog";
 
     //Registration page
     public static final String email = "ex123@gmail.com";
