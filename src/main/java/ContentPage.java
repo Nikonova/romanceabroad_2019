@@ -4,6 +4,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class ContentPage extends BaseActions {
 
+
     public ContentPage(WebDriver driver, WebDriverWait wait) {
         super(driver, wait);
     }

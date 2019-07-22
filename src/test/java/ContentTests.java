@@ -15,26 +15,27 @@ public class ContentTests extends BaseUI {
         Assert.assertEquals(contentUrl, Data.expectedUrlContent);
 
         List<WebElement> ListOnContentPage = driver.findElements(Locators.LINKS_ON_CONTENT);
-        System.out.println(ListOnContentPage.size());
+        Assert.assertEquals(ListOnContentPage.size(), 22);
+        System.out.println("Page contains " + ListOnContentPage.size() + " links.");
+        System.out.println("//We check only some of them.");
 
-        for (int i = 0; i < ListOnContentPage.size(); i++) {
+        for (int i = 5; i < 7; i++) {
             String info = ListOnContentPage.get(i).getText();
+            ListOnContentPage.get(i).click();
+
             if (info.equals(Data.expectedTitleBlog)) {
-                ListOnContentPage.get(i).click();
 
                 String blogTitle = contentPage.verifyBlogTitle();
-                System.out.println(blogTitle);
                 Assert.assertEquals(blogTitle, Data.expectedTitleBlog);
+                System.out.println(blogTitle + " - wright TITLE of Page");
 
-                List<WebElement> listOfBlog = driver.findElements(Locators.LINKS_ON_BLOG);
-                System.out.println(listOfBlog.size());
-
-                contentPage.clickBackOnContent();
-                ListOnContentPage = driver.findElements(Locators.LINKS_ON_CONTENT);
             }
+            contentPage.clickBackOnContent();
+            ListOnContentPage = driver.findElements(Locators.LINKS_ON_CONTENT);
+
 
         }
 
     }
-    
+
 }

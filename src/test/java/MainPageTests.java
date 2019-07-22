@@ -17,7 +17,8 @@ public class MainPageTests extends BaseUI {
         for (int i = 0; i < mainLinks.size(); i++) {
             String info = mainLinks.get(i).getText();
             System.out.println(info);
-            if (mainLinks.get(i).getText().contains("HOME")&& mainLinks.get(i).getText().contains("HOW WE WORK") && mainLinks.get(i).getText().contains("PHOTOS")&&mainLinks.get(i).getText().contains("GIFTS")&&mainLinks.get(i).getText().contains("TOUR TO UKRAINE")&&mainLinks.get(i).getText().contains("BLOG")&&mainLinks.get(i).getText().contains("SIGN IN")){
+
+            if (mainLinks.get(i).getText().contains("HOME") && mainLinks.get(i).getText().contains("HOW WE WORK") && mainLinks.get(i).getText().contains("PHOTOS") && mainLinks.get(i).getText().contains("GIFTS") && mainLinks.get(i).getText().contains("TOUR TO UKRAINE") && mainLinks.get(i).getText().contains("BLOG") && mainLinks.get(i).getText().contains("SIGN IN")) {
                 System.out.println("We can make test");
             }
 
