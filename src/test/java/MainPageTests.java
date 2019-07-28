@@ -1,3 +1,4 @@
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -44,4 +45,42 @@ public class MainPageTests extends BaseUI {
         Assert.assertEquals(currentUrlMainPage, Data.expectedMainUrl);
 
     }
+        @Test
+    public void testLinksOnMainPage () {
+        mainPage.checkLinksOnWebPage("//a", "href");
+        mainPage.checkLinksOnWebPage("//img", "src");
+        driver.findElement(Locators.LINK_SEARCH);
+            mainPage.checkLinksOnWebPage("//a", "href");
+            mainPage.checkLinksOnWebPage("//img", "src");
+
+    }
+
+    @Test
+    public void selectRandomDropDownList () {
+        driver.findElement(Locators.LINK_SEARCH).click();
+
+        int sizeOfDropDownListSortBy = searchPage.getSizeDropDownList(Locators.DROP_DOWN_LIST_SORT_BY);
+
+        System.out.println(sizeOfDropDownListSortBy);
+        for (int i = 0; i < sizeOfDropDownListSortBy ; i++) {
+            searchPage.selectItemDropDownRandomOption(Locators.DROP_DOWN_LIST_SORT_BY, "Sort by");
+            mainPage.javaWaitSec(3);
+        }
+    }
+
+    @Test
+    public void selectRandomDropDownListAge () {
+        driver.findElement(Locators.LINK_SEARCH).click();
+
+        int sizeOfDropDownListSortBy = searchPage.getSizeDropDownList(Locators.DROP_DOWN_LIST_SORT_BY_MAX);
+
+        System.out.println(sizeOfDropDownListSortBy);
+        for (int i = 0; i < sizeOfDropDownListSortBy ; i++) {
+            searchPage.selectItemDropDownRandomOption(Locators.DROP_DOWN_LIST_SORT_BY_MAX, "Sort by");
+            mainPage.javaWaitSec(3);
+        }
+    }
+
+
+
 }
