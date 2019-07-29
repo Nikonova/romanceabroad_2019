@@ -6,7 +6,18 @@ import java.util.List;
 
 public class ContentTests extends BaseUI {
 
-    @Test
+    public static final boolean testCase1002 = false;
+    public static final boolean testCase1001 = true;
+
+    @Test(priority = 2, enabled = testCase1002, groups = {"ie","admin", "user"})
+    public void verifyLinksOnMediaPage() {
+        contentPage.clickHowWeWork();
+
+        mainPage.checkLinksOnWebPage("//a", "href");
+        mainPage.checkLinksOnWebPage("//img", "src");
+    }
+
+    @Test(priority = 1, enabled = testCase1001, groups = {"admin", "user"})
     public void testContent() {
 
         contentPage.clickHowWeWork();

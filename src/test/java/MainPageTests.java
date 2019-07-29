@@ -10,6 +10,19 @@ public class MainPageTests extends BaseUI {
     String currentUrlMainPage;
 
     @Test
+    public void smokeTestMainPage() {
+
+        List<WebElement> mainLinks = driver.findElements(Locators.LINKS_FROM_NAVBAR);
+        for (int i = 0; i < mainLinks.size(); i++) {
+            mainLinks.get(i).click();
+            driver.get(mainUrl);
+            mainLinks = driver.findElements(Locators.LINKS_FROM_NAVBAR);
+
+        }
+    }
+
+
+    @Test
     public void testMainPage() {
 
         List<WebElement> mainLinks = driver.findElements(Locators.LINKS_FROM_NAVBAR);
@@ -19,7 +32,7 @@ public class MainPageTests extends BaseUI {
             String info = mainLinks.get(i).getText();
             System.out.println(info);
 
-            if (mainLinks.get(i).getText().contains("HOME") && mainLinks.get(i).getText().contains("HOW WE WORK") && mainLinks.get(i).getText().contains("PHOTOS") && mainLinks.get(i).getText().contains("GIFTS") && mainLinks.get(i).getText().contains("TOUR TO UKRAINE") && mainLinks.get(i).getText().contains("BLOG") && mainLinks.get(i).getText().contains("SIGN IN")) {
+            if (info.contains("HOME") && info.contains("HOW WE WORK") && info.contains("PHOTOS") && info.contains("GIFTS") && info.contains("TOUR TO UKRAINE") && info.contains("BLOG") && info.contains("SIGN IN")) {
                 System.out.println("We can make test");
             }
 
@@ -45,42 +58,47 @@ public class MainPageTests extends BaseUI {
         Assert.assertEquals(currentUrlMainPage, Data.expectedMainUrl);
 
     }
-        @Test
-    public void testLinksOnMainPage () {
+
+    @Test
+    public void testLinksOnMainPage() {
         mainPage.checkLinksOnWebPage("//a", "href");
         mainPage.checkLinksOnWebPage("//img", "src");
+
         driver.findElement(Locators.LINK_SEARCH);
-            mainPage.checkLinksOnWebPage("//a", "href");
-            mainPage.checkLinksOnWebPage("//img", "src");
+        mainPage.checkLinksOnWebPage("//a", "href");
+        mainPage.checkLinksOnWebPage("//img", "src");
+
+        driver.findElement(Locators.LINK_MEDIA);
+
+
 
     }
 
     @Test
-    public void selectRandomDropDownList () {
+    public void selectRandomDropDownList() {
         driver.findElement(Locators.LINK_SEARCH).click();
 
         int sizeOfDropDownListSortBy = searchPage.getSizeDropDownList(Locators.DROP_DOWN_LIST_SORT_BY);
 
         System.out.println(sizeOfDropDownListSortBy);
-        for (int i = 0; i < sizeOfDropDownListSortBy ; i++) {
+        for (int i = 0; i < sizeOfDropDownListSortBy; i++) {
             searchPage.selectItemDropDownRandomOption(Locators.DROP_DOWN_LIST_SORT_BY, "Sort by");
             mainPage.javaWaitSec(3);
         }
     }
 
     @Test
-    public void selectRandomDropDownListAge () {
+    public void selectRandomDropDownListAge() {
         driver.findElement(Locators.LINK_SEARCH).click();
 
         int sizeOfDropDownListSortBy = searchPage.getSizeDropDownList(Locators.DROP_DOWN_LIST_SORT_BY_MAX);
 
         System.out.println(sizeOfDropDownListSortBy);
-        for (int i = 0; i < sizeOfDropDownListSortBy ; i++) {
+        for (int i = 0; i < sizeOfDropDownListSortBy; i++) {
             searchPage.selectItemDropDownRandomOption(Locators.DROP_DOWN_LIST_SORT_BY_MAX, "Sort by");
             mainPage.javaWaitSec(3);
         }
     }
-
 
 
 }

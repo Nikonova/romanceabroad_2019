@@ -23,7 +23,7 @@ public class BaseUI {
     MediaPage mediaPage;
     ContentPage contentPage;
 
-    @BeforeMethod
+    @BeforeMethod(groups = {"user", "admin", "ie"}, alwaysRun = true)
     @Parameters("browser")
     public void setup(@Optional("chrome") String browser, Method method){
 

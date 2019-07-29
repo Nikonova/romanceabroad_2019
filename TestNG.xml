@@ -11,17 +11,37 @@
 
         <parameter name="browser" value="ie"/>
 
+        <groups>
+            <run>
+                <include name="ie"  />
+                <exclude name="admin" />
+                <exclude name="user"  />
+            </run>
+        </groups>
+
+
         <classes>
 
             <class name ="MediaTests"/>
         </classes>
 
     </test>
+
+
+
 
     <test name="FirefoxTestCases">
 
         <parameter name="browser" value="firefox"/>
 
+        <groups>
+            <run>
+                <include name="ie"  />
+                <exclude name="admin" />
+                <exclude name="user"  />
+            </run>
+        </groups>
+
         <classes>
 
             <class name ="MediaTests"/>
@@ -29,13 +49,30 @@
 
     </test>
 
+
+
+
     <test name="ChromeTestCases">
 
         <parameter name="browser" value="chrome"/>
 
+        <groups>
+            <run>
+                <exclude name="ie"  />
+                <include name="admin" />
+                <include name="user"  />
+            </run>
+        </groups>
+
         <classes>
 
-            <class name ="MediaTests"/>
+            <class name ="MediaTests">
+                    <methods>
+                        <include name=".*TestCase1001.*"/>
+                        <include name=".*TestCase1002.*"/>
+                    </methods>
+            </class>
+
         </classes>
 
     </test>

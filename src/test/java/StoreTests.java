@@ -3,7 +3,18 @@ import org.testng.annotations.Test;
 
 public class StoreTests extends BaseUI {
 
-    @Test
+    public static final boolean testCase1002 = false;
+    public static final boolean testCase1001 = true;
+
+    @Test(priority = 2, enabled = testCase1002, groups = {"ie","admin", "user"})
+    public void verifyLinksOnMediaPage() {
+        storePage.clickGift();
+
+        mainPage.checkLinksOnWebPage("//a", "href");
+        mainPage.checkLinksOnWebPage("//img", "src");
+    }
+
+    @Test(priority = 1, enabled = testCase1001, groups = {"admin", "user"})
     public void testStore() {
 
         storePage.clickGift();

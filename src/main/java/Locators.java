@@ -5,7 +5,7 @@ public class Locators {
     //Main page
     public static final By LINK_VIDEO_YOUTUBE = By.xpath("//iframe[@src='https://www.youtube.com/embed/RRECuJzm3IY?start=85']");
     public static final By BUTTON_PLAY = By.cssSelector("button.ytp-large-play-button.ytp-button");
-    public static final By LINKS_FROM_NAVBAR = By.xpath("//ul[@class='navbar-nav']//li");
+    public static final By LINKS_FROM_NAVBAR = By.xpath("//ul[@class='navbar-nav']//li/a");
 
     //BookNow
     public static final By LINK_BOOKNOW = By.xpath("//a[text()='BOOK NOW ']");
@@ -80,6 +80,16 @@ public class Locators {
     public static final By CLICK_ITEM = By.xpath("//div[@class='col-xs-6 col-sm-6 col-md-3 b-store-list__item']");
     public static final By CURRENT_TEXT_TOUR = By.xpath("//h1[@class='title']");
     public static final By CURRENT_TEXT_ON_LOGIN_BUTTON = By.xpath("//a[@id='ajax_login_link']");
+    public static final By PICTURE_OF_GIFT = By.xpath("//div[@class='ssil']//a//i");
+    public static final By TEXT_OF_GIFT = By.xpath("//div[@class='ssil']//div//a[@href='https://romanceabroad.com/store/category-sweets']//i");
+    public static final By PICTURE_OF_TOUR_TO_UKRAINE = By.xpath("//div[@class='ssil2']//a//i");
+    public static final By TEXT_OF_TOUR_TO_UKRAINE = By.xpath("//div[@class='ssil2']//a[@data-item='txt']");
+    public static final By PICTURE_INDIVIDUAL_TRIP_TO_UKRAINE = By.xpath("//div[@class='ssil3']//a//i");
+    public static final By TEXT_INDIVIDUAL_TRIP_TO_UKRAINE = By.xpath("//div[@class='ssil3']//a[@data-item='txt']");
+    public static final By PICTURE_MAIN_DROPDOWN_MENU = By.xpath("//div[@class='header-inner']//div//i[@class='fa fa-bars fa-lg item']");
+    public static final By PICTURE_SEARCH = By.xpath("//div[@class='menu-top-right-block']//div//i[@class='fa fa-search']");
+    public static final By PICTURE_FORM_FOR_SEARCH = By.xpath("//form[@id='main_search_form_user_line'][@method='POST']");
+    public static final By TEXT_LOGIN = By.xpath("//a[@id='ajax_login_link'][@class='top-menu-item']");
 
     //for each page
     public static final By TITLE_OF_PAGE = By.xpath("//h1");

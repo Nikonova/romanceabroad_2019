@@ -8,19 +8,32 @@ import java.util.List;
 
 public class MediaTests extends BaseUI {
 
+    public static final boolean testCase1002 = true;
+    public static final boolean testCase1001 = true;
+    public static final boolean testCase1003 = true; //
+
+    @Test(priority = 3, enabled = testCase1003, groups = {"user", "admin"})
+    public void verifyLinksOnMediaPageTestCase1003() {
+        mediaPage.clickMedia();
+
+        mainPage.checkLinksOnWebPage("//a", "href");
+        mainPage.checkLinksOnWebPage("//img", "src");
+    }
+
+
     //simple Test for IE, but doesn't work, I need to download 32bit IE and I can't
-    @Test
-    public void testMediaPage() {
+    @Test(priority = 2, enabled = testCase1002, groups = {"ie"})
+    public void testMediaPageTestCase1002() {
         wait.until(ExpectedConditions.elementToBeClickable(Locators.LINK_MEDIA));
         mediaPage.clickMedia();
-        mainPage.javaWaitSec(5);
+        mainPage.javaWaitSec(10);
         String mediaUrl = mediaPage.verifyMediaUrl();
         System.out.println(mediaUrl);
         Assert.assertEquals(mediaUrl, Data.expectedUrlMedia);
     }
 
-   /* @Test
-    public void testMedia() {
+   @Test(priority = 1, enabled = testCase1001, groups = {"admin", "user"})
+    public void testMediaTestCase1001() {
 
         mediaPage.clickMedia();
         String mediaUrl = mediaPage.verifyMediaUrl();
@@ -48,5 +61,5 @@ public class MediaTests extends BaseUI {
 
         System.out.println(mediaUrl);
         Assert.assertEquals(mediaUrl, Data.expectedUrlMedia);
-    }*/
+    }
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class ArrayLists {
+public class ExampleLists {
     String a = "password";
     String b = "username";
     String c = "phone";
